@@ -49,17 +49,19 @@ A sliding sidebar menu for navigation.
 ## 📸 Screenshots
 
 ### Input Component
+
 ![Input Default](src/assets/input/default.png)
 ![Input Password with Clear](src/assets/input/password_clear.png)
 ![Input Password without Clear](src/assets/input/password_no_clear.png)
 
 ### Toast Component
+
 ![Toast Success](src/assets/toast/success.png)
 ![Toast Error](src/assets/toast/error.png)
 ![Toast Info](src/assets/toast/info.png)
 ![Toast Warning](src/assets/toast/warning.png)
 
 ### Sidebar Menu Component
+
 ![Sidebar Level 1](src/assets/sidebar/level-1.png)
 ![Sidebar Level 2](src/assets/sidebar/level-2.png)
-

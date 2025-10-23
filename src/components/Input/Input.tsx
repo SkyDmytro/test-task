@@ -25,8 +25,6 @@ const usePasswordVisibility = (initialVisible = false) => {
   return { isVisible, toggle };
 };
 
-
-
 export const Input: React.FC<InputProps> = ({
   type,
   clearable,
