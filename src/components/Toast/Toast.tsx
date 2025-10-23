@@ -60,15 +60,8 @@ export const Toast: React.FC<ToastProps> = ({
       </svg>
     ),
     error: (
-      <svg className="toast-icon" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-          fill="currentColor"
-        />
-        <path
-          d="M15.5 4L14 5.5 11.5 3 10 4.5 8.5 3 7 4.5 5.5 3 4 4.5V19.5L5.5 21 7 19.5 8.5 21 10 19.5 11.5 21 14 19.5 15.5 21 17 19.5V4.5L15.5 4z"
-          fill="currentColor"
-        />
+      <svg className="toast-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="8" fill="#ff4d4f" />
       </svg>
     ),
     warning: (
