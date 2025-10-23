@@ -1,0 +1,323 @@
+.input {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 16px;
+}
+
+.input__field {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1f2937;
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.input__field:focus {
+  border-color: #3b82f6;
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.1),
+    0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.input__field:hover:not(:focus) {
+  border-color: #9ca3af;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.input__field::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Adjust padding when buttons are present */
+.input__field:not(:only-child) {
+  padding-right: 50px;
+}
+
+.input:has(.input__button--toggle):has(.input__button--clear) .input__field {
+  padding-right: 84px;
+}
+
+.input__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: #6b7280;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+}
+
+.input__button:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.input__button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.input__button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.input__button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.input__button--toggle {
+  right: 12px;
+}
+
+.input__button--clear {
+  right: 12px;
+}
+
+/* When both buttons are present */
+.input:has(.input__button--toggle) .input__button--clear {
+  right: 48px;
+}
+
+/* Error state */
+.input--error .input__field {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.input--error .input__field:focus {
+  border-color: #ef4444;
+  box-shadow:
+    0 0 0 3px rgba(239, 68, 68, 0.1),
+    0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Success state */
+.input--success .input__field {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.input--success .input__field:focus {
+  border-color: #10b981;
+  box-shadow:
+    0 0 0 3px rgba(16, 185, 129, 0.1),
+    0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Disabled state */
+.input__field:disabled {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.input__field:disabled + .input__button {
+  color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.input__field:disabled + .input__button:hover {
+  background: none;
+  transform: translateY(-50%);
+}
+
+/* Size variations */
+.input--small .input__field {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.input--small .input__field:not(:only-child) {
+  padding-right: 42px;
+}
+
+.input--small:has(.input__button--toggle):has(.input__button--clear) .input__field {
+  padding-right: 72px;
+}
+
+.input--small .input__button {
+  width: 28px;
+  height: 28px;
+  right: 8px;
+}
+
+.input--small:has(.input__button--toggle) .input__button--clear {
+  right: 38px;
+}
+
+.input--small .input__button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.input--large .input__field {
+  padding: 16px 20px;
+  font-size: 18px;
+  border-radius: 16px;
+}
+
+.input--large .input__field:not(:only-child) {
+  padding-right: 56px;
+}
+
+.input--large:has(.input__button--toggle):has(.input__button--clear) .input__field {
+  padding-right: 96px;
+}
+
+.input--large .input__button {
+  width: 36px;
+  height: 36px;
+  right: 16px;
+}
+
+.input--large:has(.input__button--toggle) .input__button--clear {
+  right: 56px;
+}
+
+.input--large .input__button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Floating label effect (bonus) */
+.input--floating {
+  position: relative;
+}
+
+.input--floating .input__field {
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+
+.input--floating .input__label {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  font-size: 16px;
+  color: #9ca3af;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: white;
+  padding: 0 4px;
+  z-index: 1;
+}
+
+.input--floating .input__field:focus + .input__label,
+.input--floating .input__field:not(:placeholder-shown) + .input__label {
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  .input__field {
+    background: #1f2937;
+    border-color: #374151;
+    color: #f9fafb;
+  }
+
+  .input__field:focus {
+    border-color: #60a5fa;
+    box-shadow:
+      0 0 0 3px rgba(96, 165, 250, 0.1),
+      0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  .input__field::placeholder {
+    color: #6b7280;
+  }
+
+  .input__button {
+    color: #9ca3af;
+  }
+
+  .input__button:hover {
+    background: rgba(96, 165, 250, 0.1);
+    color: #60a5fa;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .input__field {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 12px 14px;
+  }
+
+  .input__field:not(:only-child) {
+    padding-right: 48px;
+  }
+
+  .input:has(.input__button--toggle):has(.input__button--clear) .input__field {
+    padding-right: 80px;
+  }
+
+  .input__button {
+    width: 30px;
+    height: 30px;
+    right: 10px;
+  }
+
+  .input:has(.input__button--toggle) .input__button--clear {
+    right: 44px;
+  }
+}
+
+/* Animation for button appearance */
+@keyframes buttonFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.input__button--clear {
+  animation: buttonFadeIn 0.2s ease;
+}
+
+/* Custom focus ring for better accessibility */
+.input__field:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-color: transparent;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
