@@ -7,7 +7,7 @@ This project is a small React component library built with Vite, TypeScript, and
 1.  **Install dependencies:**
 
     ```bash
-    npm install
+    npm install --legacy-peer-deps
     ```
 
 2.  **Run Storybook:**
@@ -48,9 +48,18 @@ A sliding sidebar menu for navigation.
 
 ## 📸 Screenshots
 
-As a language model, I am unable to take screenshots. Please run Storybook and take screenshots of the following:
+### Input Component
+![Input Default](src/assets/input/default.png)
+![Input Password with Clear](src/assets/input/password_clear.png)
+![Input Password without Clear](src/assets/input/password_no_clear.png)
 
-- Each component in at least 2 different states (e.g., Input with and without the clear button, Sidebar open and closed).
-- The main Storybook UI showing the list of components.
+### Toast Component
+![Toast Success](src/assets/toast/success.png)
+![Toast Error](src/assets/toast/error.png)
+![Toast Info](src/assets/toast/info.png)
+![Toast Warning](src/assets/toast/warning.png)
 
-These screenshots should be added to this `README.md` file.
+### Sidebar Menu Component
+![Sidebar Level 1](src/assets/sidebar/level-1.png)
+![Sidebar Level 2](src/assets/sidebar/level-2.png)
+
