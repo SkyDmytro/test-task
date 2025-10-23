@@ -1,74 +1,56 @@
-# React + TypeScript + Vite
+# React Component Library with Storybook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a small React component library built with Vite, TypeScript, and Storybook, as part of a test assessment.
 
-Currently, two official plugins are available:
+## 🚀 Setup and Running
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.  **Install dependencies:**
 
-## React Compiler
+    ```bash
+    npm install
+    ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2.  **Run Storybook:**
+    ```bash
+    npm run storybook
+    ```
+    This will open Storybook in your browser, where you can view and interact with the components.
 
-## Expanding the ESLint configuration
+## 🧩 Components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This library includes the following components:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📥 1. Input Component
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+A versatile input component with the following features:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Types:** Can be used as a `text`, `password`, or `number` input.
+- **Password Visibility:** When `type="password"`, an eye icon is shown to toggle the visibility of the password.
+- **Clearable:** When `clearable={true}`, an "X" button appears to clear the input's content.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🔔 2. Toast Component
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+A notification component to display brief messages.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# test-task
+- **Appearance:** Appears at the bottom right of the screen.
+- **Auto-dismiss:** Automatically dismisses after a specified duration (default is 3 seconds).
+- **Transitions:** Includes a smooth slide-in and fade-out transition.
+- **Variants:** Comes in four types: `success`, `error`, `info`, and `warning`.
+- **Manual Close:** An optional close button is available to dismiss the toast manually.
+
+### 📚 3. Sidebar Menu Component
+
+A sliding sidebar menu for navigation.
+
+- **Animation:** Slides in from the right side of the screen.
+- **Nested Menus:** Supports nested submenus that can be expanded and collapsed.
+- **Close on Overlay Click:** The menu can be closed by clicking on the background overlay.
+
+## 📸 Screenshots
+
+As a language model, I am unable to take screenshots. Please run Storybook and take screenshots of the following:
+
+- Each component in at least 2 different states (e.g., Input with and without the clear button, Sidebar open and closed).
+- The main Storybook UI showing the list of components.
+
+These screenshots should be added to this `README.md` file.

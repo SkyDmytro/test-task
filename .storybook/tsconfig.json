@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "vite/client"],
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "../src/**/*.stories.tsx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    "./*.ts",
+    "./*.js"
+  ],
+  "exclude": ["../node_modules", "../dist"]
+}
